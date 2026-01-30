@@ -8,5 +8,10 @@
     "role": "user",
     "content": "Execução CLI: diagnosticar",
     "timestamp": "2026-01-30T17:26:48.564Z"
+  },
+  {
+    "role": "user",
+    "content": "Execução CLI: formatar --write",
+    "timestamp": "2026-01-30T17:29:35.357Z"
   }
 ]
