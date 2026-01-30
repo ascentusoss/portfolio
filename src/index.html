@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="./favicon.ico" sizes="any" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portfólio pessoal" />
+    <title>Portfólio</title>
+  </head>
+  <body class="site-body">
+    <div id="app">
+      <main id="topo" class="site-main">
+        <article class="surface-panel readme">
+          <div class="readme-center">
+            <img
+              src="./img/banner_capa-5.svg"
+              alt="Banner"
+              class="readme-banner"
+              loading="eager"
+            />
+
+            <div class="readme-avatar-row">
+              <img src="./img/logo.jpg" alt="Logo" class="avatar" />
+            </div>
+
+            <h1 class="readme-title">Ítalo C Lopes</h1>
+            <p class="readme-subtitle">
+              Desenvolvedor Full Stack • UI/UX Designer • DevOps
+            </p>
+
+            <div class="readme-tags">
+              <span class="tag tag-surface">TypeScript</span>
+              <span class="tag tag-surface">Node.js</span>
+              <span class="tag tag-surface-2">Next.js</span>
+              <span class="tag tag-surface-2">TailwindCSS</span>
+              <span class="tag tag-surface">Docker</span>
+              <span class="tag tag-surface">DevOps</span>
+              <span class="tag tag-surface-2">UI/UX</span>
+            </div>
+
+            <div class="readme-actions">
+              <a href="#projetos" class="btn-primary">Ver projetos</a>
+              <a href="#contato" class="btn-ghost">Contato</a>
+            </div>
+
+            <p class="readme-kicker">
+              Open Source • Educativo • De desenvolvedor para desenvolvedor
+            </p>
+          </div>
+
+          <hr class="readme-hr" />
+
+          <section id="sobre" class="readme-section">
+            <h2 class="readme-h2">Sobre</h2>
+            <p class="readme-p">
+              Eu me chamo Ítalo, mineiro do Triângulo Mineiro, mas há mais de
+              uma década morando no Centro-Oeste de Minas Gerais. Minha jornada
+              na área de TI começou ainda na adolescência, quando criei meu
+              primeiro blog. Nesse caminho eu fui e voltei algumas vezes, e eu
+              tenho uma regra autoimposta: se eu me afastar de algo e voltar
+              mais de 3 vezes, eu não me afasto mais. Eu voltei, então agora é
+              pra valer.
+            </p>
+            <ul class="readme-list">
+              <li>
+                Do campo à indústria: já trabalhei em lavouras, granjas e linha
+                de produção
+              </li>
+              <li>
+                Na tecnologia, eu busco constância, aprendizado e produtos bem
+                feitos
+              </li>
+              <li>
+                Hoje eu quero transformar esse hobby em trabalho e construir meu
+                lugar no mundo
+              </li>
+            </ul>
+          </section>
+
+          <section id="stack" class="readme-section">
+            <h2 class="readme-h2">Stack</h2>
+            <div class="stack-pills">
+              <span class="pill pill-surface">TypeScript</span>
+              <span class="pill pill-surface">Node.js</span>
+              <span class="pill pill-surface-2">Next.js</span>
+              <span class="pill pill-surface-2">Tailwind</span>
+              <span class="pill pill-surface">Docker</span>
+              <span class="pill pill-surface-2">CI</span>
+            </div>
+          </section>
+
+          <section id="memoria" class="readme-section">
+            <h2 class="readme-h2">Jogo da memória</h2>
+            <p class="readme-p">
+              Um mini jogo pra deixar a página mais viva: encontre os pares da
+              minha stack.
+            </p>
+
+            <div class="memory">
+              <div class="memory-toolbar">
+                <span id="memory-status" class="memory-status"
+                  >Carregando…</span
+                >
+                <button id="memory-reset" class="btn-ghost" type="button">
+                  Embaralhar
+                </button>
+              </div>
+
+              <div
+                id="memory-grid"
+                class="memory-grid"
+                role="group"
+                aria-label="Jogo da memória"
+              ></div>
+            </div>
+          </section>
+
+          <section id="projetos" class="readme-section">
+            <h2 class="readme-h2">Projetos</h2>
+            <p class="readme-p">
+              Alguns projetos que eu mantenho e uso como laboratório de ideias.
+            </p>
+
+            <div class="projects-grid">
+              <article class="card card-surface">
+                <div class="card-head">
+                  <h3 class="card-title">Galeria Ascentus OSS</h3>
+                  <span class="pill pill-surface">Open Source</span>
+                </div>
+                <p class="card-desc">
+                  Galeria de SVGs (badges/banners) com endpoints úteis para
+                  README: visitors, cards e assets prontos.
+                </p>
+                <div class="card-tags">
+                  <span class="tag tag-surface-2">Next.js</span>
+                  <span class="tag tag-surface-2">TypeScript</span>
+                  <span class="tag tag-surface-2">Tailwind</span>
+                </div>
+                <div class="card-actions">
+                  <a
+                    class="btn-primary"
+                    href="https://galeria-drab.vercel.app/"
+                    target="_blank"
+                    rel="noreferrer"
+                    >Abrir demo</a
+                  >
+                  <a
+                    class="btn-ghost"
+                    href="https://github.com/ascentusoss/galeria"
+                    target="_blank"
+                    rel="noreferrer"
+                    >Ver no GitHub</a
+                  >
+                </div>
+              </article>
+
+              <article class="card card-surface-2">
+                <div class="card-head">
+                  <h3 class="card-title">Oráculo CLI</h3>
+                  <span class="pill pill-surface-2">CLI</span>
+                </div>
+                <p class="card-desc">
+                  CLI para diagnosticar e manter projetos com checagens
+                  automatizadas, relatórios e suporte para CI.
+                </p>
+                <div class="card-tags">
+                  <span class="tag tag-surface">TypeScript</span>
+                  <span class="tag tag-surface">Workers</span>
+                  <span class="tag tag-surface">JSON</span>
+                </div>
+                <div class="card-actions">
+                  <a
+                    class="btn-primary"
+                    href="https://github.com/ascentusoss/oraculo"
+                    target="_blank"
+                    rel="noreferrer"
+                    >Ver no GitHub</a
+                  >
+                  <a class="btn-ghost" href="#contato">Falar comigo</a>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section id="contato" class="readme-section">
+            <div class="contact-actions">
+              <a
+                class="icon-btn icon-btn-surface"
+                href="mailto:ossmoralus@proton.me"
+                aria-label="Enviar email"
+                title="Email"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  class="icon-svg"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M4 6.5h16c.83 0 1.5.67 1.5 1.5v8c0 .83-.67 1.5-1.5 1.5H4c-.83 0-1.5-.67-1.5-1.5V8c0-.83.67-1.5 1.5-1.5Z"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="m4 8 8 6 8-6"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <span class="sr-only">Email</span>
+              </a>
+
+              <a
+                class="icon-btn icon-btn-surface-2"
+                href="https://github.com/ascentusoss"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Abrir GitHub"
+                title="GitHub"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  class="icon-svg"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M10.5 12a3 3 0 0 1 3-3h3a3 3 0 1 1 0 6h-1"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M13.5 12a3 3 0 0 1-3 3h-3a3 3 0 1 1 0-6h1"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                </svg>
+                <span class="sr-only">GitHub</span>
+              </a>
+
+              <a
+                class="icon-btn icon-btn-surface"
+                href="https://wa.me/5537998553430"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Conversar no WhatsApp"
+                title="WhatsApp"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  class="icon-svg"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12 21a9 9 0 1 0-7.76-4.44L3 21l4.64-1.24A8.96 8.96 0 0 0 12 21Z"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M9.3 9.5c.2-.5.4-.7.8-.7h.5c.2 0 .4.1.5.4l.6 1.4c.1.2.1.5-.1.7l-.5.6c-.1.2-.1.4 0 .6.6 1 1.4 1.7 2.4 2.3.2.1.4.1.6 0l.7-.5c.2-.2.5-.2.7-.1l1.4.6c.3.1.4.3.4.5v.5c0 .4-.2.7-.6.9-.8.3-1.7.3-2.7 0-1.2-.4-2.4-1.2-3.5-2.3-1.1-1.1-1.9-2.3-2.3-3.5-.3-1-.3-1.9 0-2.7Z"
+                    fill="currentColor"
+                    opacity="0.9"
+                  />
+                </svg>
+                <span class="sr-only">WhatsApp</span>
+              </a>
+            </div>
+          </section>
+        </article>
+      </main>
+
+      <footer class="site-border-t">
+        <div class="site-footer-inner">
+          <span>© <span id="year"></span> Ítalo C Lopes</span>
+          <div>
+            <a class="link-muted" href="/termos-de-uso/">Termos de uso</a>
+            <span aria-hidden="true"> • </span>
+            <a class="link-muted" href="/politica-de-privacidade/"
+              >Política de privacidade</a
+            >
+          </div>
+          <a class="link-muted" href="#topo">Voltar ao topo</a>
+        </div>
+      </footer>
+    </div>
+    <script type="module" src="/typescript/main.ts"></script>
+  </body>
+</html>

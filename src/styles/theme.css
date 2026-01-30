@@ -1,0 +1,39 @@
+:root {
+  /* Layout */
+  --container-max: 64rem;
+  --page-pad: 1rem;
+
+  /* Cores semânticas (baseadas nas vars geradas pelo Tailwind v4) */
+  --c-bg: var(--color-black);
+  --c-text: var(--color-emerald-50);
+  --c-muted: color-mix(in oklab, var(--color-emerald-100) 80%, transparent);
+
+  --c-border: color-mix(in oklab, var(--color-emerald-950) 70%, transparent);
+  --c-surface: color-mix(in oklab, var(--color-emerald-950) 20%, transparent);
+  --c-surface-2: color-mix(in oklab, var(--color-teal-950) 20%, transparent);
+  --c-surface-hover: color-mix(
+    in oklab,
+    var(--color-emerald-950) 35%,
+    transparent
+  );
+  --c-surface-hover-2: color-mix(
+    in oklab,
+    var(--color-teal-950) 35%,
+    transparent
+  );
+
+  --c-accent: var(--color-emerald-400);
+  --c-accent-hover: var(--color-emerald-300);
+}
+
+@media (min-width: 640px) {
+  :root {
+    --page-pad: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --page-pad: 1.5rem;
+  }
+}
