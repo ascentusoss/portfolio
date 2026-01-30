@@ -1,0 +1,17 @@
+{
+  "arquetipo": "next-fullstack",
+  "arquivosRaiz": [
+    ".gitignore",
+    "eslint.config.js",
+    "oraculo-0.3.7.tgz",
+    "package.json",
+    "postcss.config.js",
+    "stylelint.config.cjs",
+    "tailwind.config.js",
+    "tsconfig.json",
+    "vite.config.ts"
+  ],
+  "confidence": 71,
+  "timestamp": "2026-01-30T17:26:48.895Z",
+  "version": 1
+}
