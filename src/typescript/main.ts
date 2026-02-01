@@ -1,23 +1,34 @@
 import "../styles/style.css";
 
 import { inject } from "@vercel/analytics";
+import type { CardState, MemoryItem } from "../types/memory";
 
+/**
+ * Injeta analytics do Vercel
+ */
 inject();
 
+/**
+ * Atualiza o ano atual no rodapé da página
+ */
 const yearEl = document.getElementById("year");
 if (yearEl) {
   yearEl.textContent = new Date().getFullYear().toString();
 }
 
-type MemoryItem = {
-  key: string;
-  label: string;
-};
-
+/**
+ * Embaralha um array no lugar usando algoritmo Fisher-Yates
+ * @template T - Tipo genérico do array
+ * @param arr - Array a ser embaralhado
+ * @returns O array embaralhado
+ */
 function shuffleInPlace<T>(arr: T[]): T[] {
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
+  const LAST_ELEMENT = arr.length - 1;
+  const FIRST_VALID_INDEX = 0;
+
+  for (let i = LAST_ELEMENT; i > FIRST_VALID_INDEX; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[randomIndex]] = [arr[randomIndex], arr[i]];
   }
   return arr;
 }
@@ -31,6 +42,7 @@ function initMemoryGame() {
   if (!(statusEl instanceof HTMLElement)) return;
   if (!(resetEl instanceof HTMLButtonElement)) return;
 
+  /** Items base do jogo de memória */
   const base: MemoryItem[] = [
     { key: "ts", label: "TypeScript" },
     { key: "node", label: "Node.js" },
@@ -40,22 +52,26 @@ function initMemoryGame() {
 
   const totalPairs = base.length;
 
-  type CardState = {
-    id: number;
-    item: MemoryItem;
-    revealed: boolean;
-    matched: boolean;
-    el: HTMLButtonElement;
-  };
-
   let selected: CardState[] = [];
   let lock = false;
   let pairsFound = 0;
 
+  /** Tempo em milissegundos para esconder cartas que não formaram par */
+  const CARD_HIDE_DELAY_MS = 650;
+  /** Número de cartas selecionadas necessárias para validar um par */
+  const SELECTED_CARDS_FOR_PAIR = 2;
+
+  /**
+   * Atualiza o status do jogo exibindo pares encontrados
+   */
   const updateStatus = () => {
     statusEl.textContent = `Pares: ${pairsFound}/${totalPairs}`;
   };
 
+  /**
+   * Renderiza o estado visual da carta
+   * @param card - Estado da carta a ser renderizada
+   */
   const renderCard = (card: CardState) => {
     card.el.classList.toggle("is-revealed", card.revealed || card.matched);
 
@@ -71,6 +87,10 @@ function initMemoryGame() {
     card.el.textContent = card.revealed ? card.item.label : "?";
   };
 
+  /**
+   * Revela uma carta
+   * @param card - Carta a ser revelada
+   */
   const reveal = (card: CardState) => {
     card.revealed = true;
     renderCard(card);
@@ -81,11 +101,19 @@ function initMemoryGame() {
     renderCard(card);
   };
 
+  /**
+   * Marca uma carta como pareada
+   * @param card - Carta a ser marcada como pareada
+   */
   const setMatched = (card: CardState) => {
     card.matched = true;
     renderCard(card);
   };
 
+  /**
+   * Manipula o clique em uma carta verificando pares
+   * @param card - Carta clicada
+   */
   const onCardClick = async (card: CardState) => {
     if (lock) return;
     if (card.matched || card.revealed) return;
@@ -93,7 +121,7 @@ function initMemoryGame() {
     reveal(card);
     selected = [...selected, card];
 
-    if (selected.length < 2) return;
+    if (selected.length < SELECTED_CARDS_FOR_PAIR) return;
 
     lock = true;
     const [a, b] = selected;
@@ -113,9 +141,12 @@ function initMemoryGame() {
       hide(b);
       selected = [];
       lock = false;
-    }, 650);
+    }, CARD_HIDE_DELAY_MS);
   };
 
+  /**
+   * Constrói o tabuleiro do jogo com cartas embaralhadas
+   */
   const build = () => {
     gridEl.replaceChildren();
     selected = [];
@@ -152,4 +183,7 @@ function initMemoryGame() {
   build();
 }
 
+/**
+ * Inicializa o jogo da memória quando o DOM está pronto
+ */
 initMemoryGame();
