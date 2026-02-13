@@ -1,0 +1,6 @@
+> NOTA: Vou congelar esse porque esse eu fiz porque tava com preguiça da vida ai fiz esse pra distrair, não cauculei o tempo, mas acho que se tiver levado 1 hora limpa pra fazer foi muito
+---
+
+![congelado](https://ascentus-oss.vercel.app/api/svg/badges/decorativos/badge-congelado.svg)
+
+---
